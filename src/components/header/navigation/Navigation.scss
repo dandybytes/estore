@@ -1,0 +1,88 @@
+nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .nav-btn {
+        z-index: 1002;
+        height: 1.8rem;
+        width: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 0.1rem solid white;
+        background-color: transparent;
+        cursor: pointer;
+        @media only screen and (min-width: 750px) {
+            display: none;
+        }
+    }
+
+    .nav-icon {
+        position: relative;
+        width: 60%;
+
+        &,
+        &::before,
+        &::after {
+            display: inline-block;
+            border-radius: 20%;
+            height: 0.1rem;
+            background-color: white;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            width: 100%;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s;
+        }
+
+        &::before {
+            transform: translateY(-0.35rem);
+        }
+
+        &::after {
+            transform: translateY(0.35rem);
+        }
+    }
+
+    ul.nav-list {
+        display: none;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        @media only screen and (min-width: 750px) {
+            display: flex;
+        }
+
+        li {
+            list-style-type: none;
+            margin-right: 1rem;
+
+            a.nav-link {
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                color: white;
+            }
+        }
+    }
+}
+
+// nav icon animation when opening the nav side panel
+.nav-open .nav-btn .nav-icon {
+    background-color: transparent;
+}
+
+.nav-open .nav-btn .nav-icon::before {
+    transform: rotate(135deg) translateY(0);
+}
+
+.nav-open .nav-btn .nav-icon::after {
+    transform: rotate(-135deg) translateY(0);
+}
