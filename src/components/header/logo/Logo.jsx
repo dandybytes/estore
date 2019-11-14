@@ -5,7 +5,7 @@ import "./Logo.scss";
 const Logo = () => {
     return (
         <div className="logo">
-            <Link to="/" exact className="nav-link">
+            <Link to="/" className="nav-link">
                 ZenTech
             </Link>
         </div>

@@ -1,0 +1,18 @@
+@import "../../../variables.scss";
+
+.cart-status {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    @media only screen and (min-width: $breakMedium) {
+        padding: 0 1rem;
+    }
+
+    .cart-items {
+        display: none;
+        @media only screen and (min-width: $breakMedium) {
+            display: inline-block;
+        }
+    }
+}

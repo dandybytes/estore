@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+header.header {
+    position: sticky;
+    width: 100vw;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--overlayColor);
+    color: white;
+    @media only screen and (min-width: $breakMedium) {
+        height: 4rem;
+    }
+
+    .header-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 0 1rem;
+        @media only screen and (min-width: $breakMedium) {
+            padding: 0 2rem;
+        }
+    }
+
+    .header-rightside {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-weight: 300;
+    }
+
+    .header-bottom-border {
+        height: 0.4rem;
+        width: 100%;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+}
