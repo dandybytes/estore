@@ -1,6 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
+
 import "./HomePage.scss";
+
+import LinkButton from "./../common/LinkButton";
 
 const HomePage = () => {
     return (
@@ -8,9 +10,7 @@ const HomePage = () => {
             <section className="home-poster">
                 <div className="home-poster-message">
                     <h1 className="home-poster-title">A new perspective on the world...</h1>
-                    <Link to="/products" className="link-button">
-                        shop now
-                    </Link>
+                    <LinkButton destination="/products" message="shop now" />
                 </div>
             </section>
         </div>
