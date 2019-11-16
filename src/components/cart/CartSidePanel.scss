@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.cart-side-panel {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $lightColor;
+    padding: 2rem;
+    background: $darkColor;
+    color: $lightColor;
+    overflow-y: scroll;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    @media (min-width: $breakMedium) {
+        width: 20rem;
+    }
+
+    .close-cart-cross-btn {
+        position: absolute;
+        top: 0.3rem;
+        right: 0.5rem;
+        padding: 0.2rem 0.45rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .cart-empty-message {
+        font-size: 1.2rem;
+        word-spacing: 0.3rem;
+        margin: auto auto;
+    }
+}

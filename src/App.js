@@ -3,6 +3,7 @@ import {Route, Switch} from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/header/Header";
+import CartSidePanel from "./components/cart/CartSidePanel";
 import AboutPage from "./components/pages/AboutPage";
 import CartPage from "./components/pages/CartPage";
 import ContactPage from "./components/pages/ContactPage";
@@ -15,6 +16,7 @@ function App() {
     return (
         <div className="app">
             <Header />
+            <CartSidePanel />
             <Switch>
                 <Route path="/" exact component={HomePage} />
                 <Route path="/about" component={AboutPage} />
