@@ -11,11 +11,6 @@ const NavList = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/about" exact className="nav-link" activeClassName="nav-link-active">
-                    About
-                </NavLink>
-            </li>
-            <li>
                 <NavLink
                     to="/products"
                     exact
@@ -30,11 +25,11 @@ const NavList = () => {
                     Contact
                 </NavLink>
             </li>
-            <li>
-                <NavLink to="/cart" exact className="nav-link" activeClassName="nav-link-active">
-                    Cart
+            {/* <li>
+                <NavLink to="/about" exact className="nav-link" activeClassName="nav-link-active">
+                    About
                 </NavLink>
-            </li>
+            </li> */}
         </ul>
     );
 };
