@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+
+.menu-panel {
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $lightColor;
+    background: $darkColor;
+    color: $lightColor;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    @media (min-width: $breakMedium) {
+        width: 20rem;
+    }
+
+    .close-menu-cross-btn {
+        position: absolute;
+        top: 0.3rem;
+        left: 0.5rem;
+        padding: 0.2rem 0.45rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .menu-pages {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+
+        li {
+            width: 100%;
+
+            a {
+                display: block;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background: transparent;
+                color: $lightColor;
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background: $lightColor;
+                    color: $darkColor;
+                }
+            }
+        }
+    }
+}
