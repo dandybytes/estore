@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {connect} from "react-redux";
 import {Route, Switch} from "react-router-dom";
-import "./App.css";
-
 import Header from "./components/header/Header";
 import CartSidePanel from "./components/cart/CartSidePanel";
 import MenuPanel from "./components/menu/MenuPanel";
@@ -12,8 +11,15 @@ import HomePage from "./components/pages/HomePage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import ProductCataloguePage from "./components/pages/ProductCataloguePage";
 import ProductDetailsPage from "./components/pages/ProductDetailsPage";
+import products from "./data/products";
+import {setAllProducts} from "./redux/actions/actionsProducts";
+import "./App.css";
 
-function App() {
+const App = ({setAllProducts}) => {
+    useEffect(() => {
+        setAllProducts(products);
+    }, [setAllProducts]);
+
     return (
         <div className="app">
             <Header />
@@ -30,6 +36,6 @@ function App() {
             </Switch>
         </div>
     );
-}
+};
 
-export default App;
+export default connect(null, {setAllProducts})(App);
