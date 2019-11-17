@@ -1,3 +1,5 @@
+import {addItemToCart, removeItemFromCart} from "../utils/utilsCart";
+
 const initialState = {visible: false, cartItems: []};
 
 const cartReducer = (state = initialState, action) => {
@@ -8,9 +10,10 @@ const cartReducer = (state = initialState, action) => {
             return {...state, visible: false};
         case "open_cart":
             return {...state, visible: true};
-        case "add_item_to_cart":
-            const newCartItems = [...state.cartItems, action.payload];
-            return {...state, cartItems: newCartItems};
+        case "add_cart_item":
+            return {...state, cartItems: addItemToCart(state.cartItems, action.payload)};
+        case "remove_cart_item":
+            return {...state, cartItems: removeItemFromCart(state.cartItems, action.payload)};
         default:
             return state;
     }

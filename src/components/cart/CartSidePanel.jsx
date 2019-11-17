@@ -21,7 +21,10 @@ const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
                     </ul>
                     <h4 className="cart-total">
                         cart total : $
-                        {cartItems.reduce((total, cartItem) => total + cartItem.price, 0)}
+                        {cartItems.reduce(
+                            (total, cartItem) => total + cartItem.quantity * cartItem.price,
+                            0
+                        )}
                     </h4>
                     <LinkButton
                         destination="/checkout"

@@ -6,9 +6,9 @@ import "./ProductCard.scss";
 import CustomButton from "../common/CustomButton";
 import AddToCartIcon from "../icons/AddToCartIcon";
 import MagnifyingGlassIcon from "../icons/MagnifyingGlassIcon";
-import {addItemToCart} from "../../redux/actions/actionsCart";
+import {addCartItem} from "../../redux/actions/actionsCart";
 
-const ProductCard = ({product, match, history, addItemToCart}) => {
+const ProductCard = ({product, match, history, addCartItem}) => {
     const {price, id} = product;
     const imgURL = product.imageURLs ? product.imageURLs[0] : null;
     const title = `${product.manufacturer} ${product.model}`;
@@ -29,7 +29,7 @@ const ProductCard = ({product, match, history, addItemToCart}) => {
                 </CustomButton>
             </div>
             <div className="card-link-add">
-                <CustomButton inverted onClick={() => addItemToCart(product)}>
+                <CustomButton inverted onClick={() => addCartItem(product)}>
                     <AddToCartIcon size={20} />
                 </CustomButton>
             </div>
@@ -45,4 +45,4 @@ ProductCard.defaultProps = {
     product: {manufacturer: "SomeCompany", model: "some product"}
 };
 
-export default connect(null, {addItemToCart})(withRouter(ProductCard));
+export default connect(null, {addCartItem})(withRouter(ProductCard));

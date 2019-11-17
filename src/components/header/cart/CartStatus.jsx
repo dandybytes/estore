@@ -29,6 +29,8 @@ CartStatus.defaultProps = {
     // cartItemCount: 0
 };
 
-const mapStateToProps = state => ({cartItemCount: state.cart.cartItems.length});
+const mapStateToProps = state => ({
+    cartItemCount: state.cart.cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
+});
 
 export default connect(mapStateToProps, {toggleCartVisible})(CartStatus);
