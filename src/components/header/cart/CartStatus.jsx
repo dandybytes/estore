@@ -12,11 +12,7 @@ const CartStatus = ({cartItemCount, toggleCartVisible}) => {
     return (
         <div className="cart-status" onClick={toggleCartVisible}>
             <CartIcon size={20} fill="white" />
-            {cartItemCount > 0 && (
-                <span className="cart-items">
-                    {cartItemCount} {cartItemCount === 1 ? "item" : "items"}
-                </span>
-            )}
+            {cartItemCount > 0 && <span className="cart-items">{cartItemCount}</span>}
         </div>
     );
 };

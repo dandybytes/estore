@@ -10,10 +10,13 @@
     }
 
     .cart-items {
+        margin: -1rem 0 0 -1rem;
+        padding: 0 0.3rem;
+        border-radius: 50%;
+        background-color: $accentColor;
+        color: $lightColor;
         font-size: 0.8rem;
-        display: none;
-        @media only screen and (min-width: $breakMedium) {
-            display: inline-block;
-        }
+        font-weight: 400;
+        display: inline-block;
     }
 }
