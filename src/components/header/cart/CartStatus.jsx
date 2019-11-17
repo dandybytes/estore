@@ -12,17 +12,23 @@ const CartStatus = ({cartItemCount, toggleCartVisible}) => {
     return (
         <div className="cart-status" onClick={toggleCartVisible}>
             <CartIcon size={20} fill="white" />
-            <span className="cart-items">{cartItemCount} items</span>
+            {cartItemCount > 0 && (
+                <span className="cart-items">
+                    {cartItemCount} {cartItemCount === 1 ? "item" : "items"}
+                </span>
+            )}
         </div>
     );
 };
 
 CartStatus.propTypes = {
-    cartItemCount: PropTypes.number
+    cartItemCount: PropTypes.number.isRequired
 };
 
 CartStatus.defaultProps = {
-    cartItemCount: 0
+    // cartItemCount: 0
 };
 
-export default connect(null, {toggleCartVisible})(CartStatus);
+const mapStateToProps = state => ({cartItemCount: state.cart.cartItems.length});
+
+export default connect(mapStateToProps, {toggleCartVisible})(CartStatus);
