@@ -1,0 +1,38 @@
+@import "../../variables.scss";
+
+.custom-button {
+    display: flex;
+    justify-content: center;
+    min-width: 10rem;
+    width: auto;
+    height: 3rem;
+    border: none;
+    margin: 1rem;
+    padding: 0 2rem;
+    background-color: $darkColor;
+    color: $lightColor;
+    font-size: 1rem;
+    font-weight: 300;
+    // text-transform: uppercase;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $darkColor;
+        background-color: $lightColor;
+        color: $darkColor;
+    }
+
+    &.inverted {
+        border: 1px solid $darkColor;
+        background-color: $lightColor;
+        color: $darkColor;
+
+        &:hover {
+            border: none;
+            background-color: $darkColor;
+            color: $lightColor;
+        }
+    }
+}
