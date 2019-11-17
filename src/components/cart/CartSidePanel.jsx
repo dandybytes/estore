@@ -23,7 +23,11 @@ const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
                         cart total : $
                         {cartItems.reduce((total, cartItem) => total + cartItem.price, 0)}
                     </h4>
-                    <LinkButton destination="/cart" message="check out" />
+                    <LinkButton
+                        destination="/checkout"
+                        message="proceed to checkout"
+                        onClick={closeCart}
+                    />
                 </>
             ) : (
                 <p className="cart-empty-message">your cart is empty</p>
