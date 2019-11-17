@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 import "./LinkButton.scss";
 
-const LinkButton = ({destination, className, message}) => {
+const LinkButton = ({destination, className, message, onClick}) => {
     return (
-        <Link to={destination} className={className}>
+        <Link to={destination} className={className} onClick={onClick}>
             {message}
         </Link>
     );
