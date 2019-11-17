@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const CartIcon = ({size, fill, stroke}) => {
+const AddToCartIcon = ({size, fill, stroke}) => {
     return (
         <svg
             className="icon cart-icon"
@@ -17,4 +18,15 @@ const CartIcon = ({size, fill, stroke}) => {
     );
 };
 
-export default CartIcon;
+AddToCartIcon.propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.number,
+    style: PropTypes.object
+};
+
+AddToCartIcon.defaultProps = {
+    // color: "white",
+    // size: "2rem"
+};
+
+export default AddToCartIcon;

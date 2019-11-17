@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const UserIcon = ({size, fill, stroke}) => {
     return (
@@ -17,6 +18,17 @@ const UserIcon = ({size, fill, stroke}) => {
             </g>
         </svg>
     );
+};
+
+UserIcon.propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.number,
+    style: PropTypes.object
+};
+
+UserIcon.defaultProps = {
+    // color: "white",
+    // size: "2rem"
 };
 
 export default UserIcon;
