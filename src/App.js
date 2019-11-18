@@ -13,7 +13,7 @@ import ProductCataloguePage from "./components/pages/ProductCataloguePage";
 import ProductDetailsPage from "./components/pages/ProductDetailsPage";
 import products from "./data/products";
 import {setAllProducts} from "./redux/actions/actionsProducts";
-import "./App.css";
+import "./App.scss";
 
 const App = ({setAllProducts}) => {
     useEffect(() => {
@@ -25,15 +25,17 @@ const App = ({setAllProducts}) => {
             <Header />
             <CartSidePanel />
             <MenuPanel />
-            <Switch>
-                <Route path="/" exact component={HomePage} />
-                <Route path="/about" component={AboutPage} />
-                <Route path="/contact" component={ContactPage} />
-                <Route path="/products" exact component={ProductCataloguePage} />
-                <Route path="/products/:id" component={ProductDetailsPage} />
-                <Route path="/checkout" component={CheckoutPage} />
-                <Route component={NotFoundPage} />
-            </Switch>
+            <main>
+                <Switch>
+                    <Route path="/" exact component={HomePage} />
+                    <Route path="/about" component={AboutPage} />
+                    <Route path="/contact" component={ContactPage} />
+                    <Route path="/products" exact component={ProductCataloguePage} />
+                    <Route path="/products/:id" component={ProductDetailsPage} />
+                    <Route path="/checkout" component={CheckoutPage} />
+                    <Route component={NotFoundPage} />
+                </Switch>
+            </main>
         </div>
     );
 };

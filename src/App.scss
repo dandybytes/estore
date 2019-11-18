@@ -1,0 +1,16 @@
+@import "./variables.scss";
+
+main {
+    position: relative;
+    top: 3rem;
+    min-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $overlayColor;
+    @media only screen and (min-width: $breakMedium) {
+        top: 4rem;
+        min-height: calc(100vh - 4rem);
+    }
+}
