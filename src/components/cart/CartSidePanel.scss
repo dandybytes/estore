@@ -48,13 +48,13 @@
         }
 
         &::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 6px $overlayColor;
+            box-shadow: inset 0 0 6px $darkColorOverlay-1;
             background-color: $lightColor;
         }
 
         &::-webkit-scrollbar-thumb {
             border-radius: 1vmin;
-            background-color: $overlayColor;
+            background-color: $darkColorOverlay-1;
             opacity: 0.8;
         }
 

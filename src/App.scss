@@ -8,7 +8,9 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: $overlayColor;
+    background: url("/svg/bg-pattern.svg"),
+        radial-gradient(farthest-side ellipse at 10% 95%, #36455a, #889caf);
+    background-size: cover;
     @media only screen and (min-width: $breakMedium) {
         top: 4rem;
         min-height: calc(100vh - 4rem);

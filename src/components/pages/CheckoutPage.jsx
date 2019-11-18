@@ -31,7 +31,7 @@ const CheckoutPage = ({cartItems, purgeCart}) => {
                         >
                             Pay Now
                         </CustomButton>
-                        <CustomButton onClick={() => purgeCart()}>Cancel All</CustomButton>
+                        <CustomButton onClick={() => purgeCart()}>Empty Cart</CustomButton>
                     </div>
                 </React.Fragment>
             ) : (

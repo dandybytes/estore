@@ -2,11 +2,10 @@ import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import "./ProductCard.scss";
-import CustomButton from "../common/CustomButton";
 import AddToCartIcon from "../icons/AddToCartIcon";
 import MagnifyingGlassIcon from "../icons/MagnifyingGlassIcon";
 import {addCartItem} from "../../redux/actions/actionsCart";
+import "./ProductCard.scss";
 
 const ProductCard = ({product, match, history, addCartItem}) => {
     const {price, id} = product;
@@ -23,15 +22,11 @@ const ProductCard = ({product, match, history, addCartItem}) => {
                 <h2 className="card-overlay-title">{title}</h2>
                 <h3 className="card-overlay-price">{`$${price}`}</h3>
             </div>
-            <div className="card-link-details">
-                <CustomButton inverted onClick={() => history.push(`${match.url}/${id}`)}>
-                    <MagnifyingGlassIcon size={25} />
-                </CustomButton>
+            <div className="card-link-details" onClick={() => history.push(`${match.url}/${id}`)}>
+                <MagnifyingGlassIcon size={25} />
             </div>
-            <div className="card-link-add">
-                <CustomButton inverted onClick={() => addCartItem(product)}>
-                    <AddToCartIcon size={20} />
-                </CustomButton>
+            <div className="card-link-add" onClick={() => addCartItem(product)}>
+                <AddToCartIcon size={20} />
             </div>
         </div>
     );

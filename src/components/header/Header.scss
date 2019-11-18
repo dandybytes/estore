@@ -9,7 +9,7 @@ header.header {
     height: 3rem;
     display: flex;
     flex-direction: column;
-    background-color: var(--overlayColor);
+    background-color: $darkColor;
     color: white;
     @media only screen and (min-width: $breakMedium) {
         height: 4rem;
