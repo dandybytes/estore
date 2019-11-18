@@ -1,12 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-
 import {toggleCartVisible} from "../../../redux/actions/actionsCart";
-
-import "./CartStatus.scss";
-
+import {getCartItemCount} from "../../../redux/utils/utilsCart";
 import CartIcon from "../../icons/CartIcon";
+import "./CartStatus.scss";
 
 const CartStatus = ({cartItemCount, toggleCartVisible}) => {
     return (
@@ -25,8 +23,6 @@ CartStatus.defaultProps = {
     // cartItemCount: 0
 };
 
-const mapStateToProps = state => ({
-    cartItemCount: state.cart.cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
-});
+const mapStateToProps = state => ({cartItemCount: getCartItemCount(state.cart.cartItems)});
 
 export default connect(mapStateToProps, {toggleCartVisible})(CartStatus);

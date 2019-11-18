@@ -5,6 +5,7 @@ import {closeCart} from "../../redux/actions/actionsCart";
 import CartItem from "./CartItem";
 import LinkButton from "../common/LinkButton";
 import "./CartSidePanel.scss";
+import {getCartValue, getCartItemCount} from "../../redux/utils/utilsCart";
 
 const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
     return (
@@ -14,18 +15,15 @@ const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
             </span>
             {cartItems.length ? (
                 <>
+                    <div className="cart-summary">
+                        <h4 className="cart-count">Items: {getCartItemCount(cartItems)}</h4>
+                        <h4 className="cart-total">Value: ${getCartValue(cartItems)}</h4>
+                    </div>
                     <ul className="cart-items">
                         {cartItems.map(cartItem => (
                             <CartItem key={cartItem.id} item={cartItem} />
                         ))}
                     </ul>
-                    <h4 className="cart-total">
-                        cart total : $
-                        {cartItems.reduce(
-                            (total, cartItem) => total + cartItem.quantity * cartItem.price,
-                            0
-                        )}
-                    </h4>
                     <LinkButton
                         destination="/checkout"
                         message="proceed to checkout"

@@ -1,3 +1,9 @@
+export const getCartValue = cartItems =>
+    cartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0);
+
+export const getCartItemCount = cartItems =>
+    cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
+
 export const addUnitToCart = (cartItems, cartItemToAdd) => {
     const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id);
     if (existingCartItem) {

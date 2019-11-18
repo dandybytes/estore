@@ -10,10 +10,9 @@
         "image image quantity ."
         "image image total .";
     margin: 1rem auto;
-    // border-bottom: 1px dashed $darkColor;
     padding: 1rem 0;
     color: $darkColor;
-    background-color: $overlayColor;
+    background-color: $lightColor;
 
     .bubble {
         height: 1.1rem;
@@ -23,9 +22,15 @@
         align-items: center;
         margin: 0 0.5rem;
         border-radius: 50%;
+        background-color: $darkColor;
+        color: $lightColor;
         font-size: 1rem;
         line-height: 1rem;
         cursor: pointer;
+
+        &:hover {
+            background-color: $accentColor;
+        }
     }
 
     &-image {
@@ -57,8 +62,6 @@
 
         .checkout-item-minus-one,
         .checkout-item-plus-one {
-            background-color: $lightColor;
-            color: $darkColor;
             font-weight: bold;
         }
     }
@@ -80,8 +83,6 @@
     &-remove-btn.bubble {
         grid-area: remove;
         justify-self: end;
-        background-color: $lightColor;
-        color: $darkColor;
         font-size: 0.8rem;
         font-weight: bold;
         margin-right: 1rem;

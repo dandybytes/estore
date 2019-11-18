@@ -21,14 +21,14 @@ const CheckoutItem = ({cartItem, addCartItem, removeCartItem, removeCartProduct,
             <div
                 className="checkout-item-image"
                 onClick={() => history.push(`/products/${id}`)}
-                title="go to product details"
+                title="see product details"
             >
                 <img src={imgURL} alt={name} />
             </div>
             <span
                 className="checkout-item-name"
                 onClick={() => history.push(`/products/${id}`)}
-                title="go to product details"
+                title="see product details"
             >
                 {name}
             </span>
