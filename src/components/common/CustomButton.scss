@@ -1,27 +1,31 @@
 @import "../../variables.scss";
 
 .custom-button {
+    width: auto;
+    height: 2.5rem;
+    justify-self: center;
     display: flex;
     justify-content: center;
-    min-width: 10rem;
-    width: auto;
-    height: 3rem;
+    min-width: 7rem;
     border: none;
-    margin: 1rem;
-    padding: 0 2rem;
+    margin: 1rem 1rem 2rem;
+    padding: 0 1rem;
     background-color: $darkColor;
     color: $lightColor;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 300;
-    // text-transform: uppercase;
-    line-height: 3rem;
+    line-height: 2.5rem;
     letter-spacing: 0.1rem;
     cursor: pointer;
+    @media (min-width: $breakMedium) {
+        font-size: 1rem;
+        min-width: 13rem;
+    }
 
     &:hover {
-        border: 1px solid $darkColor;
-        background-color: $lightColor;
-        color: $darkColor;
+        background-color: $accentColor;
+        color: $lightColor;
+        font-weight: 400;
     }
 
     &.inverted {
@@ -31,8 +35,9 @@
 
         &:hover {
             border: none;
-            background-color: $darkColor;
+            background-color: $accentColor;
             color: $lightColor;
+            font-weight: 400;
         }
     }
 }

@@ -4,9 +4,13 @@ import PropTypes from "prop-types";
 
 import "./LinkButton.scss";
 
-const LinkButton = ({destination, className, message, onClick}) => {
+const LinkButton = ({destination, className, message, onClick, inverted}) => {
     return (
-        <Link to={destination} className={className} onClick={onClick}>
+        <Link
+            to={destination}
+            className={`${className}${inverted ? " inverted" : " regular"}`}
+            onClick={onClick}
+        >
             {message}
         </Link>
     );

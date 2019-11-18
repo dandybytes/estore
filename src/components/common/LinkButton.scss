@@ -1,26 +1,45 @@
 @import "../../variables.scss";
 
 .link-button {
-    margin: 1.5rem 0;
+    max-width: 15rem;
+    margin: 1.5rem auto;
+    justify-self: center;
     padding: 0.5rem 1rem;
-    background: white;
-    color: $darkColor;
     display: inline-block;
     text-transform: uppercase;
+    text-align: center;
     // letter-spacing: 0.2rem;
     word-spacing: 0.2rem;
-    outline: 2px solid white;
     outline-offset: 4px;
+    outline-width: 2px;
+    outline-style: solid;
     border: none;
     transition: 0.2s all ease-in-out;
     @media only screen and (min-width: $breakMedium) {
         margin: 2rem 0;
     }
 
-    &:hover {
-        background: transparent;
-        text-decoration: none;
-        color: white;
-        outline-color: white;
+    &.regular {
+        outline-color: $lightColor;
+        background-color: $lightColor;
+        color: $darkColor;
+
+        &:hover {
+            outline-color: $accentColor;
+            background-color: $accentColor;
+            color: $lightColor;
+        }
+    }
+
+    &.inverted {
+        outline-color: $darkColor;
+        background-color: $darkColor;
+        color: $lightColor;
+
+        &:hover {
+            outline-color: $accentColor;
+            background-color: $accentColor;
+            color: $lightColor;
+        }
     }
 }
