@@ -1,7 +1,8 @@
 const productData = [
     {
         id: "canon-1dx-m3",
-        model: "1DX mark III",
+        name: "Canon 1DX mark II",
+        model: "EOS 1DX mark III",
         manufacturer: "Canon",
         sensorType: "full-frame",
         mirrorType: "slr",
@@ -15,7 +16,8 @@ const productData = [
     },
     {
         id: "canon-5d-m4",
-        model: "5D Mark IV",
+        name: "Canon 5D mark IV",
+        model: "EOS 5D Mark IV",
         manufacturer: "Canon",
         sensorType: "full-frame",
         mirrorType: "slr",
@@ -33,7 +35,8 @@ const productData = [
     },
     {
         id: "canon-90d",
-        model: "90D",
+        name: "Canon 90D",
+        model: "EOS 90D",
         manufacturer: "Canon",
         sensorType: "aps-c",
         mirrorType: "slr",
@@ -51,6 +54,7 @@ const productData = [
     },
     {
         id: "canon-rp",
+        name: "Canon EOS RP",
         model: "EOS RP",
         manufacturer: "Canon",
         sensorType: "full-frame",
@@ -70,6 +74,7 @@ const productData = [
     // lenses
     // {
     //     id: "canon-24-105-f4-l-is-usm",
+    // name: "",
     //     model: "EF 24-105mm F4 L IS USM",
     //     manufacturer: "Canon",
     //     sensorType: "full-frame",

@@ -1,0 +1,89 @@
+@import "../../variables.scss";
+
+.checkout-item {
+    width: 100%;
+    max-width: 40rem;
+    display: grid;
+    grid-template-areas:
+        "name name . remove"
+        "image image price ."
+        "image image quantity ."
+        "image image total .";
+    margin: 1rem auto;
+    // border-bottom: 1px dashed $darkColor;
+    padding: 1rem 0;
+    color: $darkColor;
+    background-color: $overlayColor;
+
+    .bubble {
+        height: 1.1rem;
+        width: 1.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        line-height: 1rem;
+        cursor: pointer;
+    }
+
+    &-image {
+        grid-area: image;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        cursor: pointer;
+
+        img {
+            max-width: 5.5rem;
+        }
+    }
+
+    &-name {
+        grid-area: name;
+        justify-self: center;
+        cursor: pointer;
+    }
+
+    &-quantity {
+        width: 100%;
+        grid-area: quantity;
+        align-self: start;
+        justify-self: center;
+        display: flex;
+        justify-content: space-between;
+
+        .checkout-item-minus-one,
+        .checkout-item-plus-one {
+            background-color: $lightColor;
+            color: $darkColor;
+            font-weight: bold;
+        }
+    }
+
+    &-price {
+        grid-area: price;
+        align-self: end;
+        justify-self: center;
+    }
+
+    &-total {
+        grid-area: total;
+        align-self: start;
+        justify-self: center;
+        border-top: 1px solid $darkColor;
+        font-weight: bold;
+    }
+
+    &-remove-btn.bubble {
+        grid-area: remove;
+        justify-self: end;
+        background-color: $lightColor;
+        color: $darkColor;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+}
