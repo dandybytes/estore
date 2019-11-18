@@ -28,7 +28,9 @@
         line-height: 1rem;
         cursor: pointer;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $accentColorOverlay-1;
         }
     }

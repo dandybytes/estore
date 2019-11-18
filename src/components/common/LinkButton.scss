@@ -24,7 +24,9 @@
         background-color: $lightColor;
         color: $darkColor;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             outline-color: $accentColor;
             background-color: $accentColor;
             color: $lightColor;
@@ -36,7 +38,9 @@
         background-color: $darkColor;
         color: $lightColor;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             outline-color: $accentColor;
             background-color: $accentColor;
             color: $lightColor;
