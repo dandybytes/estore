@@ -11,7 +11,11 @@ const productData = [
         category: "camera",
         description:
             "Canon EOS 1DX Mark III is a premium digital SLR. It features a newly designed CMOS sensor with dual pixel autofocus and is capable of 16fps bursts through the optical viewfinder or 20fps in live view.",
-        imageURLs: ["/img/canon-eos-1dxm3-01.png", "/img/canon-eos-1dxm3-02.png"],
+        imageURLs: [
+            "/img/canon-eos-1dxm3-01.png",
+            "/img/canon-eos-1dxm3-02.png",
+            "/img/canon-eos-1dxm3-03.png"
+        ],
         price: 4500
     },
     {
