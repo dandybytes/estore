@@ -1,0 +1,148 @@
+@import "../../variables.scss";
+
+.product-details-card {
+    width: 100%;
+    max-width: 60rem;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        "manufacturer manufacturer"
+        "model model"
+        "poster poster"
+        "thumbnails thumbnails"
+        "description description"
+        "price price"
+        "buttons buttons";
+    grid-template-rows: 1fr 1fr 5fr 3fr 3fr 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    color: $darkColor;
+    background-color: $lightColorOverlay-2;
+
+    @media only screen and (min-width: $breakMedium) {
+        height: auto;
+        grid-template-areas:
+            "poster   manufacturer"
+            "poster   model"
+            "poster   description"
+            "thumbnails   price"
+            " buttons   buttons";
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 2rem 2rem auto auto auto;
+        padding: 5rem 2rem;
+    }
+
+    .product-details-manufacturer {
+        grid-area: manufacturer;
+    }
+
+    .product-details-model {
+        grid-area: model;
+    }
+
+    .product-details-description {
+        grid-area: description;
+        font-size: 0.75rem;
+        text-align: center;
+
+        @media only screen and (min-width: $breakMedium) {
+            padding: 1rem;
+            text-align: justify;
+            font-size: 1rem;
+        }
+    }
+
+    .product-details-price {
+        grid-area: price;
+
+        @media only screen and (min-width: $breakMedium) {
+            align-self: start;
+        }
+    }
+
+    .product-details-manufacturer,
+    .product-details-model,
+    .product-details-price {
+        font-weight: bold;
+
+        @media only screen and (min-width: $breakMedium) {
+            font-size: 1.2rem;
+        }
+
+        span:first-child {
+            color: $darkColorOverlay-2;
+            display: none;
+        }
+    }
+
+    .product-details-poster {
+        grid-area: poster;
+        max-height: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        @media only screen and (min-width: $breakMedium) {
+            min-height: 18rem;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+
+            @media only screen and (min-width: $breakMedium) {
+                max-width: 18rem;
+                max-height: 18rem;
+            }
+        }
+    }
+
+    .product-details-thumbnails {
+        grid-area: thumbnails;
+        width: 100%;
+        min-height: 4rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        @media only screen and (min-width: $breakMedium) {
+            width: 80%;
+            min-height: 10rem;
+        }
+
+        img {
+            max-width: 80%;
+            max-height: 90%;
+        }
+    }
+
+    .product-details-buttons {
+        width: 100%;
+        grid-area: buttons;
+        min-height: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media only screen and (min-width: $breakMedium) {
+            padding: 3rem 0 0;
+        }
+
+        button {
+            max-height: 2rem;
+            line-height: 2rem;
+            align-self: center;
+            margin: 0;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+
+            @media only screen and (min-width: $breakMedium) {
+                max-height: 2.5rem;
+                line-height: 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
