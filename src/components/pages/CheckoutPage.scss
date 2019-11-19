@@ -16,8 +16,11 @@
         display: flex;
         justify-content: space-evenly;
         margin: 0 0 0.8rem;
-        // padding-bottom: 1rem;
         font-size: 0.8rem;
+
+        @media only screen and (min-width: $breakMedium) {
+            font-size: 1rem;
+        }
     }
 
     &-total-value,
@@ -70,6 +73,9 @@
 
             .custom-button {
                 margin: 1rem 1rem 2rem;
+                max-height: 2.5rem;
+                line-height: 2rem;
+                font-size: 0.9rem;
             }
         }
     }
