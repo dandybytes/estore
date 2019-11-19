@@ -6,6 +6,7 @@
     justify-self: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     min-width: 7rem;
     border: none;
     margin: 1rem 1rem 2rem;
@@ -23,11 +24,15 @@
     }
 
     &:hover,
-    &:focus,
     &:active {
         background-color: $accentColorOverlay-1;
         color: $lightColor;
         font-weight: 400;
+    }
+
+    &:active {
+        box-shadow: 0 0 0.5rem 0.5rem $accentColorOverlay-2;
+        outline: none;
     }
 
     &.inverted {
@@ -36,12 +41,16 @@
         color: $darkColor;
 
         &:hover,
-        &:focus,
         &:active {
             border: none;
             background-color: $accentColorOverlay-1;
             color: $lightColor;
             font-weight: 400;
+        }
+
+        &:active {
+            box-shadow: 0 0 0.5rem 0.5rem $accentColorOverlay-2;
+            outline: none;
         }
     }
 }

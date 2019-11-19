@@ -25,11 +25,15 @@
         color: $darkColor;
 
         &:hover,
-        &:focus,
         &:active {
             outline-color: $accentColor;
             background-color: $accentColor;
             color: $lightColor;
+        }
+
+        &:active {
+            box-shadow: 0 0 0.5rem 0.5rem $accentColorOverlay-2;
+            outline: none;
         }
     }
 
@@ -39,11 +43,15 @@
         color: $lightColor;
 
         &:hover,
-        &:focus,
         &:active {
             outline-color: $accentColor;
             background-color: $accentColor;
             color: $lightColor;
+        }
+
+        &:active {
+            box-shadow: 0 0 0.5rem 0.5rem $accentColorOverlay-2;
+            outline: none;
         }
     }
 }
