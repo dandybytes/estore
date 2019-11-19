@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.product-details-page {
+    width: 100%;
+    height: calc(100vh - 3rem);
+    margin: 0 auto;
+    padding: 1rem;
+
+    @media only screen and (min-width: $breakMedium) {
+        height: calc(100vh - 4rem);
+        padding: 2rem 5rem;
+    }
+
+    // overflow-y: scroll;
+}
