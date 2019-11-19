@@ -1,0 +1,81 @@
+@import "../../variables.scss";
+
+.searchbar-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 10rem;
+    padding: 1rem;
+    background-color: transparent;
+
+    .searchbar-label {
+        height: 1.5rem;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0.75;
+        @media only screen and (min-width: $breakMedium) {
+            height: 2rem;
+        }
+
+        .searchbar-input {
+            height: 1.5rem;
+            border: 1px solid $darkColorOverlay-2;
+            font-size: 0.9rem;
+            width: 30vw;
+            min-width: 12rem;
+            border-radius: 2rem;
+            padding: 0.2rem 2rem;
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            @media only screen and (min-width: $breakMedium) {
+                height: 2rem;
+                border-width: 2px;
+                font-size: 1rem;
+            }
+
+            &::placeholder {
+                margin: 0 auto;
+                font-size: 0.8rem;
+                color: $darkColorOverlay-2;
+                @media only screen and (min-width: $breakMedium) {
+                    font-size: 1rem;
+                }
+            }
+
+            &:focus {
+                width: 80vw;
+                outline: none;
+                border-color: $darkColor;
+                // border-color: $accentColorOverlay-1;
+                @media only screen and (min-width: $breakMedium) {
+                    width: 50vw;
+                }
+            }
+
+            &:focus + .icon {
+                fill: $darkColor;
+                // fill: $accentColorOverlay-1;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            left: 0.5rem;
+            height: 1.25rem;
+            width: 1.25rem;
+            margin: 0 1rem 0 0;
+            fill: $darkColorOverlay-2;
+            transform: translateY(5%);
+            @media only screen and (min-width: $breakMedium) {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+}
