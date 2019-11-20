@@ -1,21 +1,23 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import MagnifyingGlassIcon from "../icons/MagnifyingGlassIcon";
 import "./SearchBar.scss";
 
-const SearchBar = ({handleUserQuery}) => {
+const SearchBar = ({handleUserQuery, userQuery, searchDelay}) => {
     let [query, setQuery] = useState("");
 
     const timeoutRef = useRef();
 
+    useEffect(() => setQuery(userQuery), [userQuery]);
+
     const handleSearchInput = event => {
-        const newQuery = event.target.value.trim();
+        const newQuery = event.target.value.trim() === "" ? "" : event.target.value;
         // save search input to component state
         setQuery(newQuery);
         // clear previous timeout if new keyboard input within short timespan (e.g. under 300ms)
         clearTimeout(timeoutRef.current);
         // set timeout to delay saving user input to Redux store to prevent overly frequent store calls
-        timeoutRef.current = setTimeout(() => handleUserQuery(newQuery), 300);
+        timeoutRef.current = setTimeout(() => handleUserQuery(newQuery), searchDelay);
     };
 
     const handleSubmit = event => {
@@ -40,11 +42,13 @@ const SearchBar = ({handleUserQuery}) => {
 };
 
 SearchBar.propTypes = {
-    handleUserQuery: PropTypes.func.isRequired
+    handleUserQuery: PropTypes.func.isRequired,
+    userQuery: PropTypes.string.isRequired,
+    searchDelay: PropTypes.number
 };
 
 SearchBar.defaultProps = {
-    // handleUserQuery: () => console.error("ERROR: required 'handleUserQuery' argument missing")
+    searchDelay: 0 // delay between input keystroke & initializing search to prevent searching repeatedly after every letter
 };
 
 export default SearchBar;

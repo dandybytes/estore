@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+
+.product-catalogue-page {
+    position: relative;
+    min-height: calc(100vh - 3rem);
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // background: $darkColorOverlay-2;
+    @media only screen and (min-width: $breakMedium) {
+        min-height: calc(100vh - 4rem);
+    }
+}
+
+.product-board {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
