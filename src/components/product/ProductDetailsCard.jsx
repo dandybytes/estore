@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import PropTypes from "prop-types";
 import AddToCartIcon from "../icons/AddToCartIcon";
 import GoBackIcon from "../icons/GoBackIcon";
-import "./ProductDetailsCard.scss";
 import CustomButton from "../common/CustomButton";
+import SquareImageContainer from "../common/SquareImageContainer";
+import Thumbnail from "../common/Thumbnail";
+import "./ProductDetailsCard.scss";
 
 const ProductDetailsCard = ({productDetails, addProductToCart, goToProductsPage}) => {
     let [spotlightImageIndex, setSpotlightImageIndex] = useState(0);
@@ -19,14 +21,14 @@ const ProductDetailsCard = ({productDetails, addProductToCart, goToProductsPage}
                 <span>model: </span> <span>{model}</span>
             </div>
             <div className="product-details-poster">
-                <img src={imageURLs[spotlightImageIndex]} alt={`${name} poster`} />
+                <SquareImageContainer imgURL={imageURLs[spotlightImageIndex]} />
             </div>
             <ul className="product-details-thumbnails">
                 {imageURLs.map((url, ind) => (
-                    <img
-                        onClick={() => setSpotlightImageIndex(ind)}
-                        src={url}
-                        alt={`${name} thumbnail ${ind + 1}`}
+                    <Thumbnail
+                        imgURL={url}
+                        overlayColor="rgba(255, 255, 255, 0.1)"
+                        handleClick={() => setSpotlightImageIndex(ind)}
                         key={`${name}thumbnail${ind}`}
                     />
                 ))}
