@@ -1,0 +1,140 @@
+@import "../../variables.scss";
+
+.contact-form-container {
+    max-width: 80vw;
+    width: 70vh;
+    padding: 10vmin;
+    background-color: $darkColor;
+    border: 1px solid $lightColor;
+    opacity: 0.8;
+}
+
+.contact-form-headline {
+    margin: 3vmin 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    opacity: 0.7;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1vmin;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin: 1.5vmin 0;
+    padding: 1vmin 2vmin;
+    background-color: transparent;
+    border: 1px solid $lightColorOverlay-1;
+    color: $lightColor;
+    font-family: Lato, "Open Sans", sans-serif;
+    font-weight: 300;
+    word-spacing: 0.1rem;
+}
+
+.contact-form textarea {
+    height: 12vmin;
+    resize: none;
+}
+
+.contact-form textarea::-webkit-scrollbar {
+    width: 0.75vmin;
+}
+
+.contact-form textarea::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+    background-color: $darkColor;
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb {
+    border-radius: 1vmin;
+    background-color: $lightColorOverlay-1;
+    opacity: 0.8;
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb:hover {
+    background: $accentColorOverlay-2;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: $lightColorOverlay-2;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1px solid $accentColorOverlay-2;
+}
+
+.contact-form button {
+    margin: 3vmin 0 0;
+    padding: 1vmin 2vmin;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    background-color: $lightColor;
+    color: $darkColor;
+    border: 2px solid $lightColor;
+    cursor: pointer;
+}
+
+.contact-form button:hover,
+.contact-form button:active {
+    background-color: $accentColorOverlay-2;
+    border: 2px solid $accentColorOverlay-2;
+}
+
+.contact-form button:focus {
+    border: 2px solid $accentColorOverlay-2;
+    background-color: transparent;
+    color: $accentColorOverlay-2;
+    outline: none;
+}
+
+@media only screen and (min-width: 500px) {
+    .contact-form-headline {
+        font-size: 5.5vmin;
+    }
+
+    .contact-form input,
+    .contact-form input::placeholder,
+    .contact-form textarea,
+    .contact-form textarea::placeholder {
+        font-size: 2vmin;
+    }
+
+    .contact-form button {
+        font-size: 2.5vmin;
+        letter-spacing: 0.5vmin;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .contact-form-headline {
+        font-size: 6vmin;
+    }
+
+    .contact-form input,
+    .contact-form input::placeholder,
+    .contact-form textarea,
+    .contact-form textarea::placeholder {
+        font-size: 3.5vmin;
+    }
+
+    .contact-form button {
+        font-size: 4.5vmin;
+        letter-spacing: 1vmin;
+    }
+}
