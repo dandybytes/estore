@@ -1,4 +1,4 @@
-import {addUnitToCart, removeUnitFromCart, removeProductFromCart} from "../utils/utilsCart";
+import {addUnitToCart, removeUnitFromCart, removeProductFromCart} from "../../utils/utilsCart";
 
 const initialState = {visible: false, cartItems: []};
 

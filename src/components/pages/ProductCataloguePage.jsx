@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {connect} from "react-redux";
 import {setProductQuery} from "../../redux/actions/actionsProducts";
-import {searchProductList} from "../../redux/utils/utilsProduct";
+import {searchProductList} from "../../utils/utilsProduct";
 import ProductCard from "../product/ProductCard";
 import LinkButton from "../common/LinkButton";
 import SearchBar from "../common/SearchBar";

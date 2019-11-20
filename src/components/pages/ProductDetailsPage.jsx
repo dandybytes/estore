@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {addCartItem} from "../../redux/actions/actionsCart";
-import {getProductInfo} from "../../redux/utils/utilsProduct";
+import {getProductInfo} from "../../utils/utilsProduct";
 import ProductDetailsCard from "../product/ProductDetailsCard";
 import "./ProductDetailsPage.scss";
 

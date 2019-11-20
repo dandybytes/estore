@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import CheckoutItem from "../checkout/CheckoutItem";
 import "./CheckoutPage.scss";
-import {getCartValue, getCartItemCount} from "../../redux/utils/utilsCart";
+import {getCartValue, getCartItemCount} from "../../utils/utilsCart";
 import CustomButton from "../common/CustomButton";
 import LinkButton from "../common/LinkButton";
 import {purgeCart} from "../../redux/actions/actionsCart";

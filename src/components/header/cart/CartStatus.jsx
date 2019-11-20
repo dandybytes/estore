@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {toggleCartVisible} from "../../../redux/actions/actionsCart";
-import {getCartItemCount} from "../../../redux/utils/utilsCart";
+import {getCartItemCount} from "../../../utils/utilsCart";
 import CartIcon from "../../icons/CartIcon";
 import "./CartStatus.scss";
 

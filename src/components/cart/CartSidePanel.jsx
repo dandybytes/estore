@@ -5,7 +5,7 @@ import {closeCart} from "../../redux/actions/actionsCart";
 import CartItem from "./CartItem";
 import LinkButton from "../common/LinkButton";
 import "./CartSidePanel.scss";
-import {getCartValue, getCartItemCount} from "../../redux/utils/utilsCart";
+import {getCartValue, getCartItemCount} from "../../utils/utilsCart";
 
 const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
     return (
