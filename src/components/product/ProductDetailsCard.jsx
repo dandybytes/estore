@@ -39,7 +39,7 @@ const ProductDetailsCard = ({productDetails, addProductToCart, goToProductsPage}
             <div className="product-details-buttons">
                 <CustomButton onClick={addProductToCart}>
                     <AddToCartIcon size={15} fill="white" />
-                    Add
+                    <span>Add</span>
                 </CustomButton>
                 <CustomButton onClick={goToProductsPage}>
                     <GoBackIcon size={15} fill="white" />
