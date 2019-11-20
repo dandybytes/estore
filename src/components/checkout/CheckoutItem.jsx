@@ -2,8 +2,9 @@ import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import "./CheckoutItem.scss";
 import {addCartItem, removeCartItem, removeCartProduct} from "../../redux/actions/actionsCart";
+import Price from "../common/Price";
+import "./CheckoutItem.scss";
 
 const CheckoutItem = ({cartItem, addCartItem, removeCartItem, removeCartProduct, history}) => {
     const {name, imageURLs, price, quantity, id} = cartItem;
@@ -32,7 +33,9 @@ const CheckoutItem = ({cartItem, addCartItem, removeCartItem, removeCartProduct,
             >
                 {name}
             </span>
-            <span className="checkout-item-price">${price}</span>
+            <span className="checkout-item-price">
+                <Price value={price} />
+            </span>
             <div className="checkout-item-quantity">
                 <span
                     className="checkout-item-minus-one bubble"
@@ -50,7 +53,9 @@ const CheckoutItem = ({cartItem, addCartItem, removeCartItem, removeCartProduct,
                     +
                 </span>
             </div>
-            <span className="checkout-item-total">${quantity * price}</span>
+            <span className="checkout-item-total">
+                <Price value={quantity * price} />
+            </span>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import GoBackIcon from "../icons/GoBackIcon";
 import CustomButton from "../common/CustomButton";
 import SquareImageContainer from "../common/SquareImageContainer";
 import Thumbnail from "../common/Thumbnail";
+import Price from "../common/Price";
 import "./ProductDetailsCard.scss";
 
 const ProductDetailsCard = ({productDetails, addProductToCart, goToProductsPage}) => {
@@ -36,7 +37,7 @@ const ProductDetailsCard = ({productDetails, addProductToCart, goToProductsPage}
             <div className="product-details-description">{description}</div>
             <div className="product-details-price">
                 <span>price: </span>
-                <span>${price}</span>
+                <Price value={price} withDecimals={true} />
             </div>
             <div className="product-details-buttons">
                 <CustomButton onClick={addProductToCart}>

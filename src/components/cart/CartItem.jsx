@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Price from "../common/Price";
 import "./CartItem.scss";
 
 const CartItem = ({item: {name, imageURLs, price, quantity}}) => {
@@ -11,7 +12,7 @@ const CartItem = ({item: {name, imageURLs, price, quantity}}) => {
             <div className="item-details">
                 <span className="name">{name}</span>
                 <span className="price">
-                    {quantity} x ${price}
+                    {quantity} x <Price value={price} />
                 </span>
             </div>
         </li>

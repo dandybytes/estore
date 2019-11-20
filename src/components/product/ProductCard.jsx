@@ -1,10 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
+import {addCartItem} from "../../redux/actions/actionsCart";
 import PropTypes from "prop-types";
 import AddToCartIcon from "../icons/AddToCartIcon";
 import MagnifyingGlassIcon from "../icons/MagnifyingGlassIcon";
-import {addCartItem} from "../../redux/actions/actionsCart";
+import Price from "../common/Price";
 import "./ProductCard.scss";
 
 const ProductCard = ({product, match, history, addCartItem}) => {
@@ -20,7 +21,9 @@ const ProductCard = ({product, match, history, addCartItem}) => {
             <div className="card-color-overlay" />
             <div className="card-overlay">
                 <h2 className="card-overlay-title">{title}</h2>
-                <h3 className="card-overlay-price">{`$${price}`}</h3>
+                <h3 className="card-overlay-price">
+                    <Price value={price} />
+                </h3>
             </div>
             <div className="card-link-details" onClick={() => history.push(`${match.url}/${id}`)}>
                 <MagnifyingGlassIcon size={25} />

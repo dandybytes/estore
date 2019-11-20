@@ -6,6 +6,7 @@ import {getCartValue, getCartItemCount} from "../../utils/utilsCart";
 import CustomButton from "../common/CustomButton";
 import LinkButton from "../common/LinkButton";
 import {purgeCart} from "../../redux/actions/actionsCart";
+import Price from "../common/Price";
 
 const CheckoutPage = ({cartItems, purgeCart}) => {
     return (
@@ -17,7 +18,7 @@ const CheckoutPage = ({cartItems, purgeCart}) => {
                             Items in Cart: {getCartItemCount(cartItems)}
                         </h4>
                         <h4 className="checkout-page-total-value">
-                            Total Value: ${getCartValue(cartItems)}
+                            Total Value: <Price value={getCartValue(cartItems)} withDecimals />
                         </h4>
                     </div>
                     <ul className="checkout-page-items">

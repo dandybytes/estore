@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import {closeCart} from "../../redux/actions/actionsCart";
 import CartItem from "./CartItem";
 import LinkButton from "../common/LinkButton";
-import "./CartSidePanel.scss";
 import {getCartValue, getCartItemCount} from "../../utils/utilsCart";
+import Price from "../common/Price";
+import "./CartSidePanel.scss";
 
 const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
     return (
@@ -17,7 +18,9 @@ const CartSidePanel = ({cartItems, cartVisible, closeCart}) => {
                 <>
                     <div className="cart-summary">
                         <h4 className="cart-count">Items: {getCartItemCount(cartItems)}</h4>
-                        <h4 className="cart-total">Value: ${getCartValue(cartItems)}</h4>
+                        <h4 className="cart-total">
+                            Value: <Price value={getCartValue(cartItems)} withDecimals={false} />
+                        </h4>
                     </div>
                     <ul className="cart-items">
                         {cartItems.map(cartItem => (
