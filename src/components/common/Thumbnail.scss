@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+.image-container-icon {
+    z-index: 2;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    fill: $lightColor;
+    opacity: 0.5;
+}
